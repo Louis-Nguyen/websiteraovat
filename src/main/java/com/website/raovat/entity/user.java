@@ -34,6 +34,20 @@ public class user implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public user(String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
+			String age, String password, int cash) {
+		super();
+		this.hoTen = hoTen;
+		this.diaChi = diaChi;
+		this.gioiTinh = gioiTinh;
+		this.soDT = soDT;
+		this.image = image;
+		this.age = age;
+		this.password = password;
+		this.cash = cash;
+	}
+
 	public user(String phanQuyen, String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
 			String age, String account, String password, int cash, Set<sanpham> sanPham) {
 		super();

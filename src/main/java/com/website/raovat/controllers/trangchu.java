@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class trangchu {
 	@GetMapping
 	public String GetTrangChu() {
-		return "home";
+		return "trangchu";
 	}
 	
 	@PostMapping
 	public String PostTrangChu() {
-		return "home";
+		return "trangchu";
 	}
 }
