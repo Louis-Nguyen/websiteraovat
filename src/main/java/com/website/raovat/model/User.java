@@ -21,6 +21,38 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	public User(String name, String addr, Boolean sex, String number, String avata, String old, String email,
+			String pass, int cash) {
+		super();
+		this.name = name;
+		this.addr = addr;
+		this.sex = sex;
+		this.number = number;
+		this.avata = avata;
+		this.old = old;
+		this.email = email;
+		this.pass = pass;
+		this.cash = cash;
+	}
+	
+
+	public User(int idUser, String phanQuyen, String name, String addr, Boolean sex, String number, String avata,
+			String old, String email, String pass, int cash) {
+		super();
+		this.idUser = idUser;
+		this.phanQuyen = phanQuyen;
+		this.name = name;
+		this.addr = addr;
+		this.sex = sex;
+		this.number = number;
+		this.avata = avata;
+		this.old = old;
+		this.email = email;
+		this.pass = pass;
+		this.cash = cash;
+	}
+
 
 	public User(int idUser, String phanQuyen, String name, String addr, Boolean sex, String number, String avata,
 			String old, String email, String pass, int cash, List<Integer> sanPham) {

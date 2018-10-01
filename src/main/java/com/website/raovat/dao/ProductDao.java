@@ -1,6 +1,5 @@
 package com.website.raovat.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -12,6 +11,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
+import com.website.raovat.entity.danhmucsanpham;
 import com.website.raovat.entity.sanpham;
 import com.website.raovat.entity.user;
 
@@ -44,37 +44,27 @@ public class ProductDao {
 		}
 	}
 	@Transactional
-	public sanpham delete(sanpham product) {
+	public boolean delete(sanpham sp) {
 		Session session = sessionfactory.getCurrentSession();
 		try {
-			session.delete(product);
+			session.delete(sp);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}	
+	}
+	@Transactional
+	public sanpham findProduct(int idProduct) {
+		Session session = sessionfactory.getCurrentSession();
+		try {
+			String sql = "from sanpham where idSanPham="+idProduct;
+			sanpham product = (sanpham) session.createQuery(sql).uniqueResult();
 			return product;
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
 		}	
-	}
-	@Transactional
-	public List<sanpham> findProductByAccountSelling(int idUser) {
-		Session session = sessionfactory.getCurrentSession();
-		try {
-			List<sanpham> productList  = (List<sanpham>) session.createQuery("from sanpham where idUser='"+idUser+"' AND trangThai=1").getResultList();
-			return productList;
-		} catch (Exception e) {
-			// TODO: handle exception
-			return null;
-		}
-	}
-	@Transactional
-	public List<sanpham> findProductByAccountSold(int idUser) {
-		Session session = sessionfactory.getCurrentSession();
-		try {
-			List<sanpham> productList  = (List<sanpham>) session.createQuery("from sanpham where idUser='"+idUser+"' AND trangThai=0").getResultList();
-			return productList;
-		} catch (Exception e) {
-			// TODO: handle exception
-			return null;
-		}
 	}
 	@Transactional
 	public List<sanpham> getProduct(String sql){
@@ -86,4 +76,24 @@ public class ProductDao {
 			return null;
 		}		
 	}	
+	@Transactional
+	public danhmucsanpham getDMSP(String sql){
+		Session session = sessionfactory.getCurrentSession();
+		try {
+			danhmucsanpham DMSP = (danhmucsanpham) session.createQuery(sql).uniqueResult();
+			return DMSP;
+		} catch (Exception e) {
+			return null;
+		}		
+	}
+	@Transactional
+	public user getUser(String sql){
+		Session session = sessionfactory.getCurrentSession();
+		try {
+			user User = (user) session.createQuery(sql).uniqueResult();
+			return User;
+		} catch (Exception e) {
+			return null;
+		}		
+	}
 }

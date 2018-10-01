@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>CK MARKET</title>
-  <base href="/">
+  <script>document.write('<base href="' + document.location + '" />');</script>
 
   <link rel="stylesheet" href="style.css">
 
@@ -28,15 +28,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="http://localhost:4200/dist/RaoVat/assets/queryloader2.min.js" type="text/javascript"></script>
   <script src="http://localhost:4200/dist/RaoVat/assets/javascipt.js"></script> 
+  <script src="http://localhost:4200/dist/RaoVat/assets"></script> 
   
-	  
 </head>
 <body >
 	<app-root></app-root>
-	  <script src='<c:url value="http://localhost:4200/dist/RaoVat/runtime.js" /> '></script>
-	  <script src='<c:url value="http://localhost:4200/dist/RaoVat/polyfills.js" /> '></script>
-	  <script src='<c:url value="http://localhost:4200/dist/RaoVat/styles.js" /> '></script>
-	 <script src='<c:url value="http://localhost:4200/dist/RaoVat/vendor.js" /> '></script>
-	 <script src='<c:url value="http://localhost:4200/dist/RaoVat/main.js" /> '></script> 
+  <script src='<c:url value="http://localhost:4200/dist/RaoVat/runtime.js" /> '></script>
+  <script src='<c:url value="http://localhost:4200/dist/RaoVat/polyfills.js" /> '></script>
+  <script src='<c:url value="http://localhost:4200/dist/RaoVat/styles.js" /> '></script>
+ <script src='<c:url value="http://localhost:4200/dist/RaoVat/vendor.js" /> '></script>
+ <script src='<c:url value="http://localhost:4200/dist/RaoVat/main.js" /> '></script> 
 </body>  
 </html>

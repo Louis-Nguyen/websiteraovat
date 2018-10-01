@@ -22,6 +22,11 @@ public class danhmucsanpham implements Serializable {
 	Set<sanpham> SanPham;
 	String tenDM;
 	String imageDM;
+	
+	public danhmucsanpham() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getIdDMSP() {
 		return idDMSP;
 	}

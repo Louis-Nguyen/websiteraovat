@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.website.raovat.dao.ProductDao;
+import com.website.raovat.entity.danhmucsanpham;
 import com.website.raovat.entity.sanpham;
+import com.website.raovat.entity.user;
 
 @Service
 public class ProductServices {
@@ -25,19 +27,23 @@ public class ProductServices {
 		return productDao.update(product);
 	}
 	@Transactional
-	public sanpham delete(sanpham product) {
-		return productDao.delete(product);
+	public boolean delete(sanpham sp) {
+		return productDao.delete(sp);
 	}
 	@Transactional
-	public List<sanpham> findProductByAccountSelling(int idUser) {
-		return productDao.findProductByAccountSelling(idUser);
-	}
-	@Transactional
-	public List<sanpham> findProductByAccountSold(int idUser) {
-		return productDao.findProductByAccountSold(idUser);
+	public sanpham findProduct(int idProduct) {
+		return productDao.findProduct(idProduct);
 	}
 	@Transactional
 	public List<sanpham> getProduct(String sql){
 		return productDao.getProduct(sql);
+	}	
+	@Transactional
+	public danhmucsanpham getDMSP(String sql){
+		return productDao.getDMSP(sql);
+	}	
+	@Transactional
+	public user getUser(String sql){
+		return productDao.getUser(sql);
 	}	
 }

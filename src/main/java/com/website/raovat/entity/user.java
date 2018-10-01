@@ -1,5 +1,6 @@
 package com.website.raovat.entity;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -28,13 +29,29 @@ public class user implements Serializable {
 	int cash;
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="idUser")
-	Set<sanpham> SanPham;
+	List<sanpham> SanPham;
 	
 	public user() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+	public user(int idUser, String phanQuyen, String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
+			String age, String account, String password, int cash) {
+		super();
+		this.idUser = idUser;
+		this.phanQuyen = phanQuyen;
+		this.hoTen = hoTen;
+		this.diaChi = diaChi;
+		this.gioiTinh = gioiTinh;
+		this.soDT = soDT;
+		this.image = image;
+		this.age = age;
+		this.account = account;
+		this.password = password;
+		this.cash = cash;
+	}
+
 	public user(String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
 			String age, String password, int cash) {
 		super();
@@ -49,7 +66,7 @@ public class user implements Serializable {
 	}
 
 	public user(String phanQuyen, String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
-			String age, String account, String password, int cash, Set<sanpham> sanPham) {
+			String age, String account, String password, int cash, List<sanpham> sanPham) {
 		super();
 		this.phanQuyen = phanQuyen;
 		this.hoTen = hoTen;
@@ -63,10 +80,28 @@ public class user implements Serializable {
 		this.cash = cash;
 		SanPham = sanPham;
 	}
-	public Set<sanpham> getSanPham() {
+	
+	public user(int idUser, String phanQuyen, String hoTen, String diaChi, Boolean gioiTinh, String soDT, String image,
+			String age, String account, String password, int cash, List<sanpham> sanPham) {
+		super();
+		this.idUser = idUser;
+		this.phanQuyen = phanQuyen;
+		this.hoTen = hoTen;
+		this.diaChi = diaChi;
+		this.gioiTinh = gioiTinh;
+		this.soDT = soDT;
+		this.image = image;
+		this.age = age;
+		this.account = account;
+		this.password = password;
+		this.cash = cash;
+		SanPham = sanPham;
+	}
+
+	public List<sanpham> getSanPham() {
 		return SanPham;
 	}
-	public void setSanPham(Set<sanpham> sanPham) {
+	public void setSanPham(List<sanpham> sanPham) {
 		SanPham = sanPham;
 	}
 	public String getAccount() {
